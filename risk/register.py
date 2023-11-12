@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
+st.markdown(styled_df.to_html(escape=False), unsafe_allow_html=True)
+
 def risk_table():
     # Load the CSV file into a pandas DataFrame
     df = pd.read_csv('https://raw.githubusercontent.com/Python-explorer/dash2/main/risk/data.csv')
