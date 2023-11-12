@@ -42,6 +42,13 @@ if selection == 'Headline Charts':
     # Arrange the charts in two columns and three rows
     grid = gridplot(all_charts, ncols=2, sizing_mode='scale_width')
     st.bokeh_chart(grid)
+
+elif selection == 'Risk':
+    # Call the function from register.py to get the DataFrame
+    risk_table = risk_table()
+    # Display the table in Streamlit
+    st.table(risk_table)
+    
 else:
     # For other selections, you can add appropriate content here
     st.write(f"You selected: {selection}")
