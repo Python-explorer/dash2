@@ -14,6 +14,8 @@ def generate_chart_1():
     color_palette = ["#%06x" % np.random.randint(0, 0xFFFFFF) for _ in range(num_colors)]
     for i, treatment_function in enumerate(treatment_functions):
         p.line(df.columns[1:], data.iloc[i, :], line_color=color_palette[i], legend_label=treatment_function, line_width=2)
+    for item in p.legend.items:
+        item.label['value'] = item.label['value'][:4]
     p.add_layout(p.legend[0], 'left')
     p.legend.click_policy="hide"
     return p
