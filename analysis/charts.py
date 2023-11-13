@@ -8,7 +8,7 @@ def generate_chart_1():
     df = pd.read_csv(url)
     treatment_functions = df['Treatment Function'].loc[df['Treatment Function'] != 'Total']
     data = df.loc[df['Treatment Function'] != 'Total', :].iloc[:, 1:]
-    p = figure(x_range=list(df.columns[1:]), plot_height=600, plot_width=700, title="Number of Patients 65w+ UHSx by Treatment Function", x_axis_label="Month", y_axis_label="Number of Patients")
+    p = figure(x_range=list(df.columns[1:]), plot_height=600, plot_width=600, title="Number of Patients 65w+ UHSx by Treatment Function", x_axis_label="Month", y_axis_label="Number of Patients")
     source = ColumnDataSource(data)
     num_colors = len(treatment_functions)
     color_palette = ["#%06x" % np.random.randint(0, 0xFFFFFF) for _ in range(num_colors)]
